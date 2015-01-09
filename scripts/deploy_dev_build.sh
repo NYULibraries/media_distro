@@ -75,7 +75,7 @@ fi
 
 echo Preparing new site using $MAKE_FILE
 
-drush -d -v make --prepare-install -y $MAKE_FILE $BUILD_DIR/$BUILD_NAME
+drush -d -v make --prepare-install -y $MAKE_FILE $BUILD_DIR/$BUILD_NAME --uri=$URI/
 
 [ -d $BUILD_DIR/$BUILD_NAME ] || die "Unable to install new site. Build does not exist" 
 
@@ -86,7 +86,7 @@ echo Install new site
 
 cd $BUILD_DIR/$BUILD_NAME
 
-drush -d -v -y site-install $DRUPAL_INSTALL_PROFILE_NAME --site-name="$DRUPAL_SITE_NAME" --account-pass="$DRUPAL_ACCOUNT_PASS" --account-name=$DRUPAL_ACCOUNT_NAME --account-mail=$DRUPAL_ACCOUNT_MAIL --site-mail=$DRUPAL_SITE_MAIL --db-url=$DRUPAL_SITE_DB_TYPE://$DRUPAL_SITE_DB_USER:$DRUPAL_SITE_DB_PASS@$DRUPAL_SITE_DB_ADDRESS/$DRUPAL_DB_NAME
+drush -d -v -y site-install $DRUPAL_INSTALL_PROFILE_NAME --site-name="$DRUPAL_SITE_NAME" --account-pass="$DRUPAL_ACCOUNT_PASS" --account-name=$DRUPAL_ACCOUNT_NAME --account-mail=$DRUPAL_ACCOUNT_MAIL --site-mail=$DRUPAL_SITE_MAIL --db-url=$DRUPAL_SITE_DB_TYPE://$DRUPAL_SITE_DB_USER:$DRUPAL_SITE_DB_PASS@$DRUPAL_SITE_DB_ADDRESS/$DRUPAL_DB_NAME --uri=$URI/
 
 # remove text files and rename install.php to install.php.off
 sh $DIR/cleanup.sh $BUILD_DIR/$BUILD_NAME
@@ -98,31 +98,35 @@ chmod 777 $BUILD_DIR/$BUILD_NAME/sites/default/settings.php
 # link to the lastes build
 # need to add a check if is file/dir or link
 
-cd $BUILD_DIR
+# cd $BUILD_DIR
 
 rm $BUILD_DIR/$BUILD_BASE_NAME
 
 ln -s $BUILD_NAME $BUILD_BASE_NAME
 
-cd -
+# cd -
+
+sh $DIR/cleanup.sh $BUILD_DIR/$BUILD_NAME
 
 # Test if site is up and running
 
-STATUS=`curl -s -o /dev/null -w "%{http_code}" $BASE_URL/`
+echo Build done
+echo Build path $BUILD_DIR/$BUILD_NAME
+
+STATUS=`curl -s -o /dev/null -w "%{http_code}" $URI/`
 
 if [ "$STATUS" != "404" ] 
   then 
-    echo Build done
-    echo Build path $BUILD_DIR/$BUILD_NAME
-    echo Base URL $BASE_URL Status report $STATUS
+    echo Base URL $URI Status report $STATUS
 
-    drush status --root=$BUILD_DIR/$BUILD_NAME --uri=$BASE_URL/ --user=1
-    drush features-list --root=$BUILD_DIR/$BUILD_NAME --uri=$BASE_URL/ --user=1
+    drush status --root=$BUILD_DIR/$BUILD_NAME --uri=$URI/ --user=1
+
+    drush features-list --root=$BUILD_DIR/$BUILD_NAME --uri=$URI/ --user=1
 
     if [ "$STATUS" == "200" ] 
       then 
         echo Log-in to build with URL: 
-        drush uli --root=$BUILD_DIR/$BUILD_NAME --uri=$BASE_URL/
+        drush uli --root=$BUILD_DIR/$BUILD_NAME --uri=$URI --user=1/
     fi
     
 fi

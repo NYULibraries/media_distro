@@ -22,11 +22,17 @@ LIBRARY="$(dirname "$DIR")"/lib
 
 . $DIR/../project.conf
 
+BUILD=$1
+
 [ -d $LIBRARY ] || die "Library directory $LIBRARY does not exist"
 
-[ -d $BUILD_DIR ] || die "Build directory $BUILD_DIR does not exist" 
-  
-echo Linking build name $BUILD_NAME
+[ ! -z  $BUILD ] || die "Please provide build derectory path"
+
+[ -d $BUILD ] || die "Build directory $BUILD does not exist"
+
+[ ! `grep -q 'DRUPAL_ROOT' $BUILD/index.php` ] || die "$BUILD does not look like a Drupal installation folder."
+
+echo Linking build $BUILD
 
 site_dirs=(modules themes)
 
@@ -36,18 +42,18 @@ for site_dir in "${site_dirs[@]}"
     for dir in $LIBRARY/${site_dir}/*
       do
         base=${dir##*/}
-        if [ -d $BUILD_DIR/$BUILD_NAME/sites/all/${site_dir}/${base} ] && [ -d $LIBRARY/${site_dir}/${base} ]
+        if [ -d $BUILD/sites/all/${site_dir}/${base} ] && [ -d $LIBRARY/${site_dir}/${base} ]
           then
-            rm -rf $BUILD_DIR/$BUILD_NAME/sites/all/${site_dir}/${base}
-            ln -s $LIBRARY/${site_dir}/${base} $BUILD_DIR/$BUILD_NAME/sites/all/${site_dir}/${base}
+            rm -rf $BUILD/sites/all/${site_dir}/${base}
+            ln -s $LIBRARY/${site_dir}/${base} $BUILD/sites/all/${site_dir}/${base}
         fi  
   done
 done
 
-# find profile and symlink them to the repo code
+# find profiles and symlink them to the repo code
 for dir in $LIBRARY/profiles/*
   do 
     base=${dir##*/}
-    rm -rf $BUILD_DIR/$BUILD_NAME/profiles/${base}
-    ln -s $LIBRARY/profiles/${base} $BUILD_DIR/$BUILD_NAME/profiles/${base}    
+    rm -rf $BUILD/profiles/${base}
+    ln -s $LIBRARY/profiles/${base} $BUILD/profiles/${base}    
 done

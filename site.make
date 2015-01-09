@@ -6,7 +6,7 @@ api = 2
 
 projects[drupal][version] = "7.34"
 
-projects[ctools][version] = "1.4"
+projects[ctools][version] = "1.5"
 
 projects[entity][version] = "1.5"
 
@@ -34,7 +34,9 @@ projects[token][version] = "1.5"
 
 projects[unique_field][version] = "1.0-rc1"
 
-projects[uuid][version] = "1.0-alpha5"
+projects[uuid][version] = "1.0-alpha6"
+
+projects[jquery_update][version] = "2.4"
 
 projects[dlts_nodeapi][download][type] = "get"
 projects[dlts_nodeapi][download][url] = "http://dev-dl-pa.home.nyu.edu/projects/sites/all/projects/files/dlts_nodeapi-7.x-dev.zip"
@@ -44,13 +46,10 @@ projects[dlts_utilities][download][type] = "get"
 projects[dlts_utilities][download][url] = "http://dev-dl-pa.home.nyu.edu/projects/sites/all/projects/files/dlts_utilities-7.x-1.6.zip"
 projects[dlts_utilities][type] = "module"
 
-projects[dlts_playable_bitstreams][download][type] = "get"
-projects[dlts_playable_bitstreams][download][url] = "http://dev-dl-pa.home.nyu.edu/projects//sites/all/projects/files/dlts_playable_bitstreams-7.x-1.0-alpha1.zip"
-projects[dlts_playable_bitstreams][type] = "module"
-
-projects[dlts_interview][download][type] = "get"
-projects[dlts_interview][download][url] = "http://dev-dl-pa.home.nyu.edu/projects//sites/all/projects/files/dlts_interview-7.x-dev.zip"
-projects[dlts_interview][type] = "module"
+projects[dlts_media][download][type] = "git"
+projects[dlts_media][download][url] = "https://github.com/NYULibraries/dlts_media_drupal_modules.git"
+projects[dlts_media][type] = "module"
+projects[dlts_media][directory_name] = "dlts_media"
 
 ; Themes
 
@@ -59,9 +58,10 @@ projects[tao][version] = "3.0-beta4"
 
 ; Profiles
 
-projects[books][download][type] = "get"
-projects[books][download][url] = "http://dev-dl-pa.home.nyu.edu/projects/sites/all/projects/files/books-7.1.1.zip"
-projects[books][type] = "profile"
+projects[media][download][type] = "git"
+projects[media][download][url] = "https://github.com/NYULibraries/dlts_media_profile.git"
+projects[media][directory_name] = "media"
+projects[media][type] = "profile"
 
 ; Libraries
 
@@ -69,4 +69,3 @@ libraries[Mobile_Detect][download][type] = "git"
 libraries[Mobile_Detect][download][url] = "https://github.com/serbanghita/Mobile-Detect.git"
 libraries[Mobile_Detect][directory_name] = "Mobile_Detect"
 libraries[Mobile_Detect][type] = "library"
-
