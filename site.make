@@ -38,6 +38,8 @@ projects[uuid][version] = "1.0-alpha6"
 
 projects[jquery_update][version] = "2.4"
 
+projects[mobile_detect][version] = "1.x-dev"
+
 projects[dlts_nodeapi][download][type] = "get"
 projects[dlts_nodeapi][download][url] = "http://dev-dl-pa.home.nyu.edu/projects/sites/all/projects/files/dlts_nodeapi-7.x-dev.zip"
 projects[dlts_nodeapi][type] = "module"
@@ -55,6 +57,7 @@ projects[dlts_media][directory_name] = "dlts_media"
 
 projects[rubik][version] = "4.1"
 projects[tao][version] = "3.1"
+projects[bootstrap][version] = "3.0"
 
 ; Profiles
 
@@ -74,4 +77,3 @@ libraries[flowplayer][download][type] = "get"
 libraries[flowplayer][download][url] = "https://releases.flowplayer.org/5.5.2/flowplayer-5.5.2.zip"
 libraries[flowplayer][directory_name] = "flowplayer"
 libraries[flowplayer][type] = "library"
-
