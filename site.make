@@ -53,8 +53,8 @@ projects[dlts_media][directory_name] = "dlts_media"
 
 ; Themes
 
-projects[rubik][version] = "4.0-rc1"
-projects[tao][version] = "3.0-beta4"
+projects[rubik][version] = "4.1"
+projects[tao][version] = "3.1"
 
 ; Profiles
 
