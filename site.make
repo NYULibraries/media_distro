@@ -69,3 +69,9 @@ libraries[Mobile_Detect][download][type] = "git"
 libraries[Mobile_Detect][download][url] = "https://github.com/serbanghita/Mobile-Detect.git"
 libraries[Mobile_Detect][directory_name] = "Mobile_Detect"
 libraries[Mobile_Detect][type] = "library"
+
+libraries[flowplayer][download][type] = "get"
+libraries[flowplayer][download][url] = "https://releases.flowplayer.org/5.5.2/flowplayer-5.5.2.zip"
+libraries[flowplayer][directory_name] = "flowplayer"
+libraries[flowplayer][type] = "library"
+
