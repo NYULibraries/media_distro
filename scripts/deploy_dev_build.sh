@@ -98,15 +98,12 @@ chmod 777 $BUILD_DIR/$BUILD_NAME/sites/default/settings.php
 # link to the lastes build
 # need to add a check if is file/dir or link
 
-# cd $BUILD_DIR
+if [ -e "$BUILD_DIR/$BUILD_BASE_NAME" ]
+  then
+    rm $BUILD_DIR/$BUILD_BASE_NAME
+fi
 
-rm $BUILD_DIR/$BUILD_BASE_NAME
-
-ln -s $BUILD_NAME $BUILD_BASE_NAME
-
-# cd -
-
-sh $DIR/cleanup.sh $BUILD_DIR/$BUILD_NAME
+ln -s $BUILD_DIR/$BUILD_NAME $BUILD_DIR/$BUILD_BASE_NAME
 
 # Test if site is up and running
 
@@ -115,18 +112,14 @@ echo Build path $BUILD_DIR/$BUILD_NAME
 
 STATUS=`curl -s -o /dev/null -w "%{http_code}" $URI/`
 
-if [ "$STATUS" != "404" ] 
+echo Base URL $URI Status report $STATUS
+
+drush status --root=$BUILD_DIR/$BUILD_NAME --uri=$URI/ --user=1
+
+drush features-list --root=$BUILD_DIR/$BUILD_NAME --uri=$URI/ --user=1
+
+if [ "$STATUS" == "200" ] 
   then 
-    echo Base URL $URI Status report $STATUS
-
-    drush status --root=$BUILD_DIR/$BUILD_NAME --uri=$URI/ --user=1
-
-    drush features-list --root=$BUILD_DIR/$BUILD_NAME --uri=$URI/ --user=1
-
-    if [ "$STATUS" == "200" ] 
-      then 
-        echo Log-in to build with URL: 
-        drush uli --root=$BUILD_DIR/$BUILD_NAME --uri=$URI --user=1/
-    fi
-    
+    echo Log-in to build with URL: 
+    drush uli --root=$BUILD_DIR/$BUILD_NAME --uri=$URI/ --user=1
 fi
