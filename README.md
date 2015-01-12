@@ -1,8 +1,6 @@
 DLTS Media site
 ==============
 
-# Clone this project
-
 # Create a project.conf
 
 	cd media_distro
