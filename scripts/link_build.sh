@@ -34,7 +34,7 @@ BUILD=$1
 
 echo Linking build $BUILD
 
-site_dirs=(modules themes)
+site_dirs=(modules themes libraries)
 
 # find modules/themes and symlink them to the repo code
 for site_dir in "${site_dirs[@]}"

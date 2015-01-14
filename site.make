@@ -40,6 +40,8 @@ projects[jquery_update][version] = "2.4"
 
 projects[mobile_detect][version] = "1.x-dev"
 
+projects[nodeformcols][version] = "1.0"
+
 projects[dlts_nodeapi][download][type] = "get"
 projects[dlts_nodeapi][download][url] = "http://dev-dl-pa.home.nyu.edu/projects/sites/all/projects/files/dlts_nodeapi-7.x-dev.zip"
 projects[dlts_nodeapi][type] = "module"
