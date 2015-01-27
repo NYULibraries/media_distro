@@ -36,7 +36,7 @@ projects[unique_field][version] = "1.0-rc1"
 
 projects[uuid][version] = "1.0-alpha6"
 
-projects[jquery_update][version] = "2.4"
+projects[jquery_update][version] = "2.5"
 
 projects[mobile_detect][version] = "1.x-dev"
 
@@ -57,7 +57,7 @@ projects[dlts_media][directory_name] = "dlts_media"
 
 ; Themes
 
-projects[rubik][version] = "4.1"
+projects[rubik][version] = "4.2"
 projects[tao][version] = "3.1"
 projects[bootstrap][version] = "3.0"
 
