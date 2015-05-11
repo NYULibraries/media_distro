@@ -4,42 +4,24 @@ api = 2
 
 ; Modules
 
-projects[drupal][version] = "7.34"
-
-projects[ctools][version] = "1.5"
-
-projects[entity][version] = "1.5"
-
-projects[features][version] = "1.0"
-
+projects[drupal][version] = "7.37"
+projects[ctools][version] = "1.7"
+projects[entity][version] = "1.6"
+projects[features][version] = "2.5"
 projects[variable][version] = "2.5"
-
 projects[i18n][version] = "1.11"
-
 projects[diff][version] = "3.2"
-
 projects[libraries][version] = "2.2"
-
 projects[transliteration][version] = "3.2"
-
 projects[references][version] = "2.1"
-
 projects[strongarm][version] = "2.0"
-
-projects[views][version] = "3.8"
-
+projects[views][version] = "3.11"
 projects[pathauto][version] = "1.2"
-
-projects[token][version] = "1.5"
-
+projects[token][version] = "1.6"
 projects[unique_field][version] = "1.0-rc1"
-
 projects[uuid][version] = "1.0-alpha6"
-
 projects[jquery_update][version] = "2.5"
-
 projects[mobile_detect][version] = "1.x-dev"
-
 projects[nodeformcols][version] = "1.0"
 
 projects[dlts_nodeapi][download][type] = "get"
@@ -47,7 +29,7 @@ projects[dlts_nodeapi][download][url] = "http://dev-dl-pa.home.nyu.edu/projects/
 projects[dlts_nodeapi][type] = "module"
 
 projects[dlts_utilities][download][type] = "get"
-projects[dlts_utilities][download][url] = "http://dev-dl-pa.home.nyu.edu/projects/sites/all/projects/files/dlts_utilities-7.x-1.6.zip"
+projects[dlts_utilities][download][url] = "http://dev-dl-pa.home.nyu.edu/projects/sites/all/projects/files/dlts_utilities-7.x-1.7.zip"
 projects[dlts_utilities][type] = "module"
 
 projects[dlts_media][download][type] = "git"
@@ -60,6 +42,11 @@ projects[dlts_media][directory_name] = "dlts_media"
 projects[rubik][version] = "4.2"
 projects[tao][version] = "3.1"
 projects[bootstrap][version] = "3.0"
+
+projects[mediaembed][download][type] = "git"
+projects[mediaembed][download][url] = "https://github.com/NYULibraries/mediaembed.git"
+projects[mediaembed][type] = "theme"
+projects[mediaembed][directory_name] = "dlts_media"
 
 ; Profiles
 
