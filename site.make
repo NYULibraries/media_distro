@@ -23,6 +23,7 @@ projects[uuid][version] = "1.0-alpha6"
 projects[jquery_update][version] = "2.5"
 projects[mobile_detect][version] = "1.x-dev"
 projects[nodeformcols][version] = "1.0"
+projects[devel][version] = "1.5"
 
 projects[dlts_nodeapi][download][type] = "get"
 projects[dlts_nodeapi][download][url] = "http://dev-dl-pa.home.nyu.edu/projects/sites/all/projects/files/dlts_nodeapi-7.x-dev.zip"
@@ -66,3 +67,10 @@ libraries[flowplayer][download][type] = "get"
 libraries[flowplayer][download][url] = "https://releases.flowplayer.org/5.5.2/flowplayer-5.5.2.zip"
 libraries[flowplayer][directory_name] = "flowplayer"
 libraries[flowplayer][type] = "library"
+
+libraries[Browser.php][download][type] = "git"
+libraries[Browser.php][download][url] = "https://github.com/cbschuld/Browser.php.git"
+libraries[Browser.php][directory_name] = "Browser.php"
+libraries[Browser.php][type] = "library"
+
+
