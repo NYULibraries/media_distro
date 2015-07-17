@@ -4,10 +4,10 @@ api = 2
 
 ; Modules
 
-projects[drupal][version] = "7.37"
+projects[drupal][version] = "7.38"
 projects[ctools][version] = "1.7"
 projects[entity][version] = "1.6"
-projects[features][version] = "2.5"
+projects[features][version] = "2.6"
 projects[variable][version] = "2.5"
 projects[i18n][version] = "1.11"
 projects[diff][version] = "3.2"
@@ -20,7 +20,7 @@ projects[pathauto][version] = "1.2"
 projects[token][version] = "1.6"
 projects[unique_field][version] = "1.0-rc1"
 projects[uuid][version] = "1.0-alpha6"
-projects[jquery_update][version] = "2.5"
+projects[jquery_update][version] = "2.6"
 projects[mobile_detect][version] = "1.x-dev"
 projects[nodeformcols][version] = "1.0"
 projects[devel][version] = "1.5"
